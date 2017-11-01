@@ -1,0 +1,360 @@
+String Upper and Lower Case
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UpperandLower
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            String str;
+             str = Console.ReadLine();
+            Console.WriteLine("The sentence is : {0}{1} ",str.ToUpper(),str.ToLower()) ;
+            Console.ReadLine();
+            
+        }
+    }
+}
+
+
+String Copy,Replace,Substring
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Copy
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            String s1 = "Hi all Welcome";
+            String s2 = s1.Substring(2);
+            String s3 = String.Copy(s1);
+            String s4 = s1.Replace('i', 'u');
+            Console.WriteLine("String {0} {1} {2} {3} ", s2,s3,s4);
+            Console.ReadLine();
+        }
+    }
+}
+
+
+
+String Increment
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Count
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i;
+            String output="";
+            String input = Console.ReadLine();
+            for (i= 0; i < input.Length; i++) 
+            {
+                int ascii = input[i] + 1;
+                char c = (char)ascii;
+                output = output + c.ToString();
+                
+            }
+            Console.WriteLine("Increment {0}", output);
+            Console.ReadLine();
+        }
+        
+    }
+}
+
+String number of alphabeats and numbers
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Length
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i;
+           int nameCount = 0;
+           int digitCount = 0;
+
+            Console.WriteLine("Enter the String");
+            String input = Console.ReadLine();
+            for (i = 0; i < input.Length; i++) 
+            {
+                char a = input[i];
+                if(a>=48 && a<=57)
+                {
+                    digitCount++;
+                }
+                else if((a>=65&&a<=90)||(a>=97 && a<=122))
+                
+                {
+                    nameCount++;
+                }
+            }
+            Console.WriteLine("No of Digits is {0} and Number of words {1}", digitCount,nameCount);
+            Console.ReadLine();
+          
+        }
+    }
+}
+
+String if Upper then Lower and Vice versa
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UpperandLower
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            String s = Console.ReadLine();
+            String d = "";
+            for(int i=0;i<s.Length;i++)
+            {
+                if(s[i]>=48 && s[i]<=57 )
+                {
+                    d = d + s[i];
+                }
+                else if(s[i]>= 65 && s[i] <= 90)
+                {
+                    d = d +Convert.ToChar (s[i] + 32);
+                }
+                else if(s[i]>= 97 && s[i]<=122)
+                    {
+                    d = d +Convert.ToChar (s[i] - 32);
+                }
+            }
+            Console.WriteLine(d);
+            Console.ReadLine();
+            
+        }
+    }
+}
+
+String Reverse without Method
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace String_reverse
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            String input = Console.ReadLine();
+            String rev = "";
+            for(int i= input.Length-1;i>=0;i--)
+            {
+                rev = rev + input[i];
+            }
+            Console.WriteLine("String {0}", rev);
+            Console.ReadLine();
+        }
+    }
+}
+
+Palindrome
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Palindrome
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            String input = Console.ReadLine();
+            String reverse = "";
+            for (int i = input.Length - 1; i >= 0; i--)
+            {
+                reverse = reverse + input[i];
+
+            }
+            if(reverse==input)
+            {
+                Console.WriteLine("Palindrome {0}{1}", reverse, input);
+            }
+            else
+            {
+                Console.WriteLine("Not a Palindrome {0}{1}", reverse, input);
+            }
+            Console.ReadLine();
+        }
+    }
+}
+
+
+Number or a Alphabeat
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Accepts_a_Character
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            String output = "";
+            String output1 = "";
+            Console.WriteLine("Enter a character");
+            String ab = Console.ReadLine();
+            for(int i=0;i<ab.Length;i++)
+            {
+                if(ab[i]>=97 && ab[i]<= 122)
+                {
+                    output = output +Convert.ToChar(ab[i]);
+                    Console.WriteLine("Its an Alphabeat {0}", output);
+                }
+                if (ab[i] >= 65 && ab[i] <= 90)
+                {
+                    output = output + Convert.ToChar(ab[i]);
+                    Console.WriteLine("Its an capital Alphabeat {0}", output);
+                }
+                else if(ab[i]>=48 && ab[i] <= 57)
+                {
+                    output1 = output1 + Convert.ToChar(ab[i]);
+                    Console.WriteLine("Its a Number {0}", output1);
+                }
+            }
+            
+            Console.ReadLine();
+
+        }
+    }
+}
+
+Tens,Hundreads,Thousands
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Tens.Hundreads_Thousands
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            String input = Console.ReadLine();
+            int ab = Convert.ToInt32(input.Length - 1);
+            if (ab == 2)
+            {
+                Console.WriteLine("Its in hundreads");
+            }
+            else if (ab == 1)
+            {
+                Console.WriteLine("Its in tens");
+
+            }
+            else if (ab == 3)
+            {
+                Console.WriteLine("Its in thousands");
+            }
+            Console.ReadLine();
+        }
+    }
+}
+
+Sum the numbers 1-10
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Sum_of_Enterd_numbers
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int Sum = 0;
+            for(int i=1;i<=10;i++)
+            {
+                Console.WriteLine("Enter the numbers");
+                int j = Convert.ToInt32(Console.ReadLine());
+                Sum = Sum + j;
+            }
+            Console.WriteLine("The Sum is {0}",Sum);
+               
+            Console.ReadLine();
+        }
+    }
+}
+
+Number of Elements in a String
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Number_of_Elements_in_a_String
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int Elementcount = 0;
+            Console.WriteLine("Enter the word");
+            String a = Console.ReadLine();
+            for(int i=0;i<a.Length;i++)
+            {
+                if(a[i]>= 65 && a[i]<= 90)
+                {
+                  Elementcount++;
+                }
+                else if(a[i]>=97 && a[i]<=122)
+                {
+                    Elementcount++;
+                }
+            }
+            Console.WriteLine("Number is {0}", Elementcount);
+            Console.ReadLine();
+        }
+    }
+}
